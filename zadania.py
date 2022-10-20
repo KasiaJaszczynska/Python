@@ -68,13 +68,39 @@ else:
 
 
 
-a=int(input("Podaj liczbę"))
-b=int(input("Podaj liczbę"))
-c=int(input("Podaj liczbę"))
-if a or b or c >0:
-    print("Zmienna jest większa od 0")
-else:
-    print("Zmienna jest mniejsza od 0")
+#a=int(input("Podaj liczbę"))
+#b=int(input("Podaj liczbę"))
+#c=int(input("Podaj liczbę"))
+#if a+b+c !=180:
+ #   print("Taki trójkąt nie istnieje")
+#elif  a== 0 or b==0 or c==0 :
+ #   print("Taki trójkąt nie istnieje")
+
+#else:
+ #   if a<90 and b<90 and  c<90:
+  #      print ("Trojkąt jest ostrokątny")
+   # elif a== 90 or b==90 or c==90:    
+    #    print ("Trojkąt jest prostokątny")
+    #elif a>90 or b>90 or c<90:
+     #   print ("Trojkąt jest rozwartokątny")
+
+#i to inaczej licznik
+
+print("---------")
+for i in range(1, 10, 2):
+    los=random.randint(1, 50)
+    print(f"Wylosowana liczba nr {i+1} to {los}")
+
+print("---------")
+for i in range(100, 1 ,-1):
+    los=random.randint(1, 50)
+    print(f"Wylosowana liczba nr {i+1} to {los}")
 
 
+for i in range(1, 101):
+    if i%2==0:
+        print("Liczby są podzielne przez 2")
+    else:
+        print("Liczby nie sa podzielne przez 2")
 
+    
