@@ -29,27 +29,27 @@ import random
 #reszta=5%2
 #potega=2**4
 
-ciag="napis"*10
+#ciag="napis"*10
 
-print(ciag)
+#print(ciag)
 
-los=random.randint(1, 100)
-print(los)
-a=10
-b=20
+#los=random.randint(1, 100)
+#print(los)
+#a=10
+#b=20
 
-los1=random.randint(a, b)
-print(los1)
+#los1=random.randint(a, b)
+#print(los1)
 
+#
+# if a>0:
+  #  print("Zmienna jest wieksza od 0")
 
-if a>0:
-    print("Zmienna jest wieksza od 0")
+#elif a==0:
+ #   print("Zmienna jest równa 0")
 
-elif a==0:
-    print("Zmienna jest równa 0")
-
-else:
-    print("Zmienna jest mniejsza od 0")
+#else:
+ #   print("Zmienna jest mniejsza od 0")
 
 
 #los1=int(input("Podaj liczbę"))
@@ -86,21 +86,54 @@ else:
 
 #i to inaczej licznik
 
-print("---------")
-for i in range(1, 10, 2):
-    los=random.randint(1, 50)
-    print(f"Wylosowana liczba nr {i+1} to {los}")
+#print("---------")
+#for i in range(1, 10, 2):
+ #   los=random.randint(1, 50)
+  #  print(f"Wylosowana liczba nr {i+1} to {los}")
 
-print("---------")
-for i in range(100, 1 ,-1):
-    los=random.randint(1, 50)
-    print(f"Wylosowana liczba nr {i+1} to {los}")
+#print("---------")
+#for i in range(100, 1 ,-1):
+ #   los=random.randint(1, 50)
+  #  print(f"Wylosowana liczba nr {i+1} to {los}")
 
 
-for i in range(1, 101):
-    if i%2==0:
-        print("Liczby są podzielne przez 2")
-    else:
-        print("Liczby nie sa podzielne przez 2")
+#for i in range(1, 101):
+ #   if i%2==0:
+  #      print("Liczby są podzielne przez 2")
+   # else:
+    #    print("Liczby nie sa podzielne przez 2")
 
+
+for litera in "kapelusz":
+    if litera=="1":
+                break
+    print(litera)
+
+for litera in "kapelusz":
+    if litera=="1":
+        continue
+    print(litera)
+
+liczba=0
+while liczba<10:
+    print(f"Liczba to: {liczba}")
+    liczba+=1
+
+#while True:
+ #   print("To prawda")
+  #  liczba+=1
     
+
+
+liczba=int(input("Podaj liczę większą od 0:"))
+while liczba<=0:
+    liczba=int(input("Podaj liczbę jeszcze raz;"))
+
+
+    #Funkcje
+
+def powitanie(imie):
+    print("Cześc,", imie )
+
+imie=input("Jak masz na imię?")
+powitanie(imie)
