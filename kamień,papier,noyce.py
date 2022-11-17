@@ -16,7 +16,7 @@ if wybor_gracza==wybor_komp:
     print ("Remis")
 else:
     for wynik in wyniki:
-        if wybor_gracza in result and wybor_komp in wynik:
+        if wybor_gracza in wynik and wybor_komp in wynik:
             zwycięsca = wyniki[wynik]
             if wybor_gracza== zwycięsca:
                 print("Wygrałeś")
