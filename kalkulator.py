@@ -31,6 +31,6 @@ elif dzialanie=="^":
     wynik=a**b
     print("Wynik potęgowania to:", wynik)
 else:
-    print("Niewłaściwy znak")
+    print("Niewłaściwy znak") 
 
 
