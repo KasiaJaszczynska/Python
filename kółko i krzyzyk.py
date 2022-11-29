@@ -10,7 +10,7 @@ szerokość= 500  #planszy
 wysokość= 500
 
 czarny = (255, 255, 255)
-zielony = (0, 0, ,0)
+zielony = (0, 0, 0)
 niebieski = (255, 0, 0)
 
 punktyx= 0
@@ -18,5 +18,17 @@ punktyy= 0
 
 plansza= [ [None] * 3, [None] * 3, [None] * 3 ]# plansza zawiera w sobie 3 mniejsze fragmenty (zawier 3 zmienne)
 #okno programu
-pg.init() 
+pg.init() #jest to funkcja, która inicjalizuje(pozostałe  funkcje)
+FPS = 30
+
+zegar = pg.time.clock()
+
+ekran = pg.display.set_mode((szerokość, wysokość + 200), 0, 32)
+
+pg.display.set_caption("kolko i krzyzyk")
+
+planszastartowa = pg.image.load("plansza.starowa.png")
+obrazekx= pg.image.load("x.png")
+obrazeko= pg.image.load("o.png")
+
 
