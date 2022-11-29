@@ -27,8 +27,8 @@ ekran = pg.display.set_mode((szerokość, wysokość + 200), 0, 32)
 
 pg.display.set_caption("kolko i krzyzyk")
 
-planszastartowa = pg.image.load("plansza.starowa.png")
-obrazekx= pg.image.load("x.png")
-obrazeko= pg.image.load("o.png")
+planszastartowa = pg.image.load("plansza.png")
+obrazekx= pg.image.load("krzyzyk.png")
+obrazeko= pg.image.load("kółko.png")
 
 
