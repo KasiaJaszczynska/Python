@@ -14,7 +14,7 @@ elif dzialanie=="-":
     print("Wynik odejmowania to:", wynik)
 elif dzialanie=="*":
     wynik=a*b
-    print("Wynik mnoenia to:", wynik)
+    print("Wynik mnozenia to:", wynik)
 elif dzialanie=="/":
     while b==0:
         print("Nie dziel przez 0")
