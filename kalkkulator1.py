@@ -1,8 +1,20 @@
 import math
-def dodaj(a, b):
-    return a+b
 
-dzialanie=input("Jakie działanie chcesz wykonać?  + dodawanie, - odjemowanie, * mnoenie, / dzielnik, ^ potęgowanie, // pierwiastek")
+def dod (a,b):
+    return a+b
+def ode (a,b):
+    return a-b
+def mno (a,b):
+    return a*b
+def dzi (a,b):
+    return a/b
+def pot (a,b):
+    return a**b
+def pie (a,b):
+    return a ** 1/b
+
+
+dzialanie=input("Jakie działanie chcesz wykonać?  + dodawanie, - odjemowanie, * mnoenie, / dzielnik, ^ potęgowanie, sqrt  pierwiastek")
 
 a=int(input("Podaj pierwszą liczbę:"))
 b=int(input("Podaj drugą liczbę:"))
@@ -33,9 +45,9 @@ elif dzialanie=="/":
  #   wynik= a ** (1/b)
   #  print("Wynik działania to:", wynik)
 
-elif dzialanie "//":
-    wynik = a//b
-    print("Wynik działania to:, wynik")
+elif dzialanie=="sqrt":
+    wynik = a ^ 1/b
+    print("Wynik działania to:", wynik)
 
 elif dzialanie=="^":
     wynik=a**b
