@@ -11,7 +11,7 @@ def dzi (a,b):
 def pot (a,b):
     return a**b
 def pie (a,b):
-    return a ** 1/b
+    return a ^ 1/b
 
 
 dzialanie=input("Jakie działanie chcesz wykonać?  + dodawanie, - odjemowanie, * mnoenie, / dzielnik, ^ potęgowanie, sqrt  pierwiastek")
