@@ -31,4 +31,15 @@ planszastartowa = pg.image.load("plansza.png")
 obrazekx= pg.image.load("krzyzyk.png")
 obrazeko= pg.image.load("kółko.png")
 
+# inne wymiaryobrazków
 
+planszastartowa = pg.transfrom.scale (planszastartowa, (szerokosc, wysokosc + 200))
+obraekx= pg.transfrom.scale (planszastartowa, (80, 80))
+obrazeko= pg.transfrom.scale (planszastartowa, (80, 80))
+
+def rysujplansze():  #mozna narysowac1 obrazek na 2 blit
+                ekran.blit(planszastartowa, (0,0))
+                
+                pg.display.update()
+
+rysujplansze()                
