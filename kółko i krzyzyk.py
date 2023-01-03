@@ -37,9 +37,23 @@ planszastartowa = pg.transfrom.scale (planszastartowa, (szerokosc, wysokosc + 20
 obraekx= pg.transfrom.scale (planszastartowa, (80, 80))
 obrazeko= pg.transfrom.scale (planszastartowa, (80, 80))
 
-def rysujplansze():  #mozna narysowac1 obrazek na 2 blit
+def rysujplansze():  #mozna narysować obrazek na 2 blit
                 ekran.blit(planszastartowa, (0,0))
-                
+                time.sleep(2)
+                ekran.fill(czarny)
+                #pionowe linie na planszy 
+                pg.fraw.line(ekran, czarny, (szerokość /3, 0 ), (szerokość  3, wysokość ), 7 )
+                pg.fraw.line(ekran, czarny, (szerokość /3 * 2, 0 ), (szerokość  3  * 2, wysokość ), 7 )
+
+
+
+
+
+
+
+
                 pg.display.update()
 
-rysujplansze()                
+
+ rysujplansze()
+
