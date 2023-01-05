@@ -4,15 +4,15 @@ ___________________
 |     |     |     |
 |  7  |  8  |  9  |
 |     |     |     |
-|-----------------|
+|_________________|
 |     |     |     |
 |  4  |  5  |  6  |
 |     |     |     |
-|-----------------|
+|_________________|
 |     |     |     |
 |  1  |  2  |  3  |
 |     |     |     |
-|-----------------|
+|_________________|
 """
 
     for i in range(1,10):
@@ -23,18 +23,18 @@ ___________________
     print(blankBoard)
 
 def player_input():
-    player1 = input("Please pick a marker 'X' or 'O' ")
+    player1 = input("Proszę wybrać 'X' lub 'O' ")
     while True:
         if player1.upper() == 'X':
             player2='O'
-            print("You've choosen " + player1 + ". Player 2 will be " + player2)
+            print("Wybrałeś/aś " + player1 + ". Gracz 2 będzie " + player2)
             return player1.upper(),player2
         elif player1.upper() == 'O':
             player2='X'
-            print("You've choosen " + player1 + ". Player 2 will be " + player2)
+            print("Wybrałeś/aś " + player1 + ". Gracz 2 będzie " + player2)
             return player1.upper(),player2
         else:
-            player1 = input("Please pick a marker 'X' or 'O' ")
+            player1 = input("Proszę wybrać 'X' lub 'O' ")
 
 def place_marker(board, marker, position):
     board[position] = marker
@@ -66,50 +66,50 @@ def win_check(board, mark):
     return False
 
 def player_choice(board):
-    choice = input("Please select an empty space between 1 and 9 : ")
+    choice = input("Proszę wybrać wolne miejsce od 1 a 9 : ")
     while not space_check(board, int(choice)):
-        choice = input("This space isn't free. Please choose between 1 and 9 : ")
+        choice = input("To miejsce nie jest wolne. Wybierz wolne miejsce od 1 do 9 : ")
     return choice
 
 def replay():
-    playAgain = input("Do you want to play again (y/n) ? ")
-    if playAgain.lower() == 'y':
+    playAgain = input("Chcesz grać jeszcze raz tak/nie ? ")
+    if playAgain.lower() == 'tak':
         return True
-    if playAgain.lower() == 'n':
+    if playAgain.lower() == 'nie':
         return False
 
 if __name__ == "__main__":
-    print('Welcome to Tic Tac Toe!')
+    print('Witam, w grze kółko i krzyzyk!')
     i = 1
-    # Choose your side
+    # gracz wybiera swoją stronę
     players=player_input()
-    # Empty board init
+    # pusta tablica init
     board = ['#'] * 10
     while True:
-        # Set the game up here
+        # tutaj usawiam grę
         game_on=full_board_check(board)
         while not game_on:
-            # Player to choose where to put the mark
+            # gracz tutaj wybiera miejsce znaku
             position = player_choice(board)
-            # Who's playin ?
+            # kot gra?
             if i % 2 == 0:
                 marker = players[1]
             else:
                 marker = players[0]
             # graj
             place_marker(board, marker, int(position))
-            # Check the board
+            # sprawdź tablicę
             display_board(board)
             i += 1
             if win_check(board, marker):
-                print("You won !")
+                print("Wygrałeś/aś !")
                 break
             game_on=full_board_check(board)
         if not replay():
             break
         else:
             i = 1
-            # Choose your side
+            # wybie swoja stronę
             players=player_input()
-            # Empty board init
+            # pusta tablica  init
             board = ['#'] * 10
