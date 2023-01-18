@@ -1,5 +1,5 @@
-def display_board(board):
-    blankBoard="""
+def wyswietlacz(tablica):
+    pustatablica="""
 ___________________
 |     |     |     |
 |  7  |  8  |  9  |
@@ -16,100 +16,102 @@ ___________________
 """
 
     for i in range(1,10):
-        if (board[i] == 'O' or board[i] == 'X'):
-            blankBoard = blankBoard.replace(str(i), board[i])
+        if (tablica[i] == 'O' or tablica[i] == 'X'):
+            pustatablica = pustatablica.replace(str(i), tablica[i])
         else:
-            blankBoard = blankBoard.replace(str(i), ' ')
-    print(blankBoard)
+            pustatablica = pustatablica.replace(str(i), ' ')
+    print(pustatablica)
 
-def player_input():
-    player1 = input("Proszę wybrać 'X' lub 'O' ")
+# Prosi uzytkownika o wybranie X lub O na cala gre
+def wejscie_gracza():
+    gracz1 = input("Proszę wybrać 'X' lub 'O'  \n")
     while True:
-        if player1.upper() == 'X':
-            player2='O'
-            print("Wybrałeś/aś " + player1 + ". Gracz 2 będzie " + player2)
-            return player1.upper(),player2
-        elif player1.upper() == 'O':
-            player2='X'
-            print("Wybrałeś/aś " + player1 + ". Gracz 2 będzie " + player2)
-            return player1.upper(),player2
+        if gracz1.upper() == 'X':
+            gracz2= 'O'
+            print("Wybrałeś/aś " + gracz1 + ". Gracz 2 będzie " + gracz2)
+            return gracz1.upper(), gracz2 
+        elif gracz1.upper() == 'O':
+            gracz2='X'
+            print("Wybrałeś/aś " + gracz1 + ". Gracz 2 będzie " + gracz2)
+            return gracz1.upper(), gracz2 
         else:
-            player1 = input("Proszę wybrać 'X' lub 'O' ")
+            gracz1 = input("Proszę wybrać 'X' lub 'O'  \n ")
 
-def place_marker(board, marker, position):
-    board[position] = marker
-    return board
 
-def space_check(board, position):
-    return board[position] == '#'
+def znacznik_miejsca(tablica, znacznik, pozycja):
+    tablica[pozycja] = znacznik
+    return tablica
 
-def full_board_check(board):
-    return len([x for x in board if x == '#']) == 1
+def sprawdzenie_przestrzeni(tablica, pozycja):
+    return tablica[pozycja] == '#'
 
-def win_check(board, mark):
-    if board[1] == board[2] == board[3] == mark:
+def pelne_sprawdzenie_tablicy(tablica):
+    return len([x for x in tablica if x == '#']) == 1
+
+def sprawdzenie_wygranej(tablica, znak):
+    if tablica[1] == tablica[2] == tablica[3] == znak:
         return True
-    if board[4] == board[5] == board[6] == mark:
+    if tablica[4] == tablica[5] == tablica[6] == znak:
         return True
-    if board[7] == board[8] == board[9] == mark:
+    if tablica[7] == tablica[8] == tablica[9] == znak:
         return True
-    if board[1] == board[4] == board[7] == mark:
+    if tablica[1] == tablica[4] == tablica[7] == znak:
         return True
-    if board[2] == board[5] == board[8] == mark:
+    if tablica[2] == tablica[5] == tablica[8] == znak:
         return True
-    if board[3] == board[6] == board[9] == mark:
+    if tablica[3] == tablica[6] == tablica[9] == znak:
         return True
-    if board[1] == board[5] == board[9] == mark:
+    if tablica[1] == tablica[5] == tablica[9] == znak:
         return True
-    if board[3] == board[5] == board[7] == mark:
+    if tablica[3] == tablica[5] == tablica[7] == znak:
         return True
     return False
 
-def player_choice(board):
-    choice = input("Proszę wybrać wolne miejsce od 1 a 9 : ")
-    while not space_check(board, int(choice)):
-        choice = input("To miejsce nie jest wolne. Wybierz wolne miejsce od 1 do 9 : ")
-    return choice
+def wybor_gracza(tablica):
+    wybor = input("Proszę wybrać wolne miejsce od 1 a 9 : \n ")
+    while not sprawdzenie_przestrzeni(tablica, int(wybor)):
+        wybor = input("To miejsce nie jest wolne. Wybierz wolne miejsce od 1 do 9 : \n ")
+    return wybor
 
-def replay():
-    playAgain = input("Chcesz grać jeszcze raz tak/nie ? ")
-    if playAgain.lower() == 'tak':
+def powtorna_rozgrywka():
+    zagraj_ponownie = input("Chcesz grać jeszcze raz tak/nie ? \n ")
+    if zagraj_ponownie.lower() == 'tak':
         return True
-    if playAgain.lower() == 'nie':
+    if zagraj_ponownie.lower() == 'nie':
         return False
 
 if __name__ == "__main__":
     print('Witam, w grze kółko i krzyzyk!')
     i = 1
     # gracz wybiera swoją stronę
-    players=player_input()
+    gracze=wejscie_gracza()
     # pusta tablica init
-    board = ['#'] * 10
+    tablica = ['#'] * 10
     while True:
         # tutaj usawiam grę
-        game_on=full_board_check(board)
-        while not game_on:
+        właczona_gra=pelne_sprawdzenie_tablicy(tablica)
+        while not właczona_gra:
             # gracz tutaj wybiera miejsce znaku
-            position = player_choice(board)
-            # kot gra?
+            pozycja = wybor_gracza(tablica)
+            # kto gra?
             if i % 2 == 0:
-                marker = players[1]
+                znacznik = gracze[1]
             else:
-                marker = players[0]
+                znacznik = gracze[0]
             # graj
-            place_marker(board, marker, int(position))
+            znacznik_miejsca(tablica, znacznik, int(pozycja))
             # sprawdź tablicę
-            display_board(board)
+            wyswietlacz(tablica)
             i += 1
-            if win_check(board, marker):
+            if sprawdzenie_wygranej(tablica, znacznik):
                 print("Wygrałeś/aś !")
                 break
-            game_on=full_board_check(board)
-        if not replay():
+            właczona_gra=pelne_sprawdzenie_tablicy(tablica)
+        if not powtorna_rozgrywka():
             break
         else:
             i = 1
             # wybie swoja stronę
-            players=player_input()
+            gracze=wejscie_gracza()
             # pusta tablica  init
-            board = ['#'] * 10
+            tablica = ['#'] * 10
