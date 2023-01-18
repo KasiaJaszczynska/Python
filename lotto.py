@@ -9,7 +9,7 @@ def losowanie ():
     losy = []
     for i in range (los):
         liczba = rnd(1, zakres)
-        while liczba in losy: 
+        while liczba in : 
             liczba = rnd(1, zakres)
         losy.append(liczba)  #dodać
     return losy
@@ -20,11 +20,11 @@ def typowanie():
         while True:
             try:
 
-                typ= int (input(f"Podaj liczbę od 1 do {zakres}"))
+                typ= int (input(f"Podaj liczbę od 1 do {zakres} : \n "))
                 if typ < 1 or typ > zakres:
-                        print("Liczba jest poza zakresm! Podaj jeszcze raz: ")
+                        print("Liczba jest poza zakresm! Podaj jeszcze raz: \n ")
                 elif typ in typy:
-                    print ("Ta liczba juz jest wytypowana. Podaj jeszcze raz")
+                    print ("Ta liczba juz jest wytypowana. Podaj jeszcze raz: \n ")
                 else:
                     break
             except:
@@ -40,7 +40,7 @@ typy.sort()
 
 
 traf = 0
-trafienia =()
+trafienia = []
 
 for typ in typy:
     if typ in losy:
